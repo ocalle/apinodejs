@@ -34,9 +34,13 @@ app.get('/', function(req,res){
     res.send('Ruta INICIO');
 });
 //Mostrar todos los artículos
-app.get('/api/users', (req,res)=>{
-    conexion.query('SELECT * FROM users100', (error,filas)=>{
-        if(error){
+// Es mostrar los articulos no los usuarios
+// Tenes un error aca /// Error de codigo
+//app.get('/api/users', (req,res)=>{
+ //   conexion.query('SELECT * FROM users100', (error,filas)=>{
+app.get('/api/articulos', (req,res)=>{
+    conexion.query('SELECT * FROM articulos', (error,filas)=>{   
+    if(error){
             throw error;
         }else{
             res.send(filas);
